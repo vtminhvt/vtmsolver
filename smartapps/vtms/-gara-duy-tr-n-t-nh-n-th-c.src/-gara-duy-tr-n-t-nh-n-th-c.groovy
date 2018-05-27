@@ -4,7 +4,7 @@ definition(
     author: "Võ Thanh Minh",
     description: "Điều khiển Gara, cửa cuốn",
     category: "Safety & Security",
-    iconUrl: "https://s3.amazonaws.com/vtmsmartthings/vtms60.png",
+    iconUrl: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png",
     iconX2Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png",
     iconX3Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png")
 preferences 

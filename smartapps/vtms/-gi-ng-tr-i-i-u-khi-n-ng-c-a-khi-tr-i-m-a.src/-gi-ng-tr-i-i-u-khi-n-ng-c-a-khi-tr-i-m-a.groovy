@@ -4,25 +4,25 @@ definition(
     author: "Võ Thanh Minh",
     description: "Điều khiển giếng trời",
     category: "Safety & Security",
-    iconUrl: "https://s3.amazonaws.com/vtmsmartthings/vtms60.png",
+    iconUrl: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png",
     iconX2Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png",
     iconX3Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png")
 preferences 
 {
  
 section ("Thời gian tác động lên công tắc")
-	{
-     input name: "timeofP", type: "number", title: "Tác động mở trong bao nhiêu giây?", defaultValue:"1"
-    }
-
-    section("Chọn công tắc điện bị tác động")
+	section("Chọn công tắc điện bị tác động")
     {
-    	input("swGR","capability.switch",title:"Công tắc điện")             
+    	input("swGR","capability.switch",title:"Tên công tắc")             
     }
     
      section("Chọn cảm biến trạng thái cửa")
     {
-        input("csGR","capability.contactSensor",title:"Cảm biến đóng, mở")
+        input("csGR","capability.contactSensor",title:"Tên cảm biến")
+    }
+     section("Chọn cảm biến phát hiện nước")
+    {
+        input("wtRain","capability.waterSensor",title:"Tên cảm biến")
     }
     
     section("Nội dung hoạt động")
@@ -45,18 +45,24 @@ def init()
    
    subscribe(swGR,"switch",sw_GR)
    subscribe(csGR,"contact",cs_GR)
+   subscribe(wtRain,"water",wt_Rain)
+}
+
+def wt_Rain(evt)
+{
+	def chk=csGR.currentValue("contact")=="open"
+	if (evt.value=="wet" && chk) 
+    {
+    	swGR.on()
+    }
 }
 
 def sw_GR(evt)
 {
-
-def p1= timeofP*1000
-
 def chk=csGR.currentValue("contact")=="open"
-
 if (evt.value == "on" && chk  )
 	{
 	sendPush("${txt}")  
 	}
- swGR.off()
+swGR.off()
 }

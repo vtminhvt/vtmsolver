@@ -18,7 +18,7 @@ preferences
 
     section("Cảm biến hiện diện")
     {
-        input("presence","capability.presenceSensor",title:"Cảm biến hiện diện")
+        input("presence","capability.presenceSensor",title:"Cảm biến hiện diện", multiple:true, required:true)
     }  
 }
 def installed() 
@@ -42,13 +42,12 @@ def presence_1(evt)
 	{
         if(evt.value=="present")
         {
-            sendPush("Chào bạn đã về Nhà! ")
+            sendPush("Chào bạn ${evt.displayName} đã về Nhà! ")
         }
 
         if(evt.value=="not present")
         {
-            sendPush("Bạn đã rời khỏi Nhà!")
+            sendPush("Bạn ${evt.displayName} đã rời khỏi Nhà! An toàn nhé!")
         }
    } 
 }
-

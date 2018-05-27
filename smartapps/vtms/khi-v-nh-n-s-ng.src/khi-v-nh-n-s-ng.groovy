@@ -27,7 +27,7 @@ preferences
 
     section("Chọn công tắc")
         {
-            input("sw1","capability.switch",title:"Công tắc")
+            input("sw1","capability.switch",title:"Công tắc",multiple:true, required:true)
         }
     
     section("Cảm biến hiện diện")
