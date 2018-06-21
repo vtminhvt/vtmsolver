@@ -56,11 +56,11 @@ def timeC=	now()
     {
         if(evt.value=="on") 
         {
-            tb("${txt}: ${evt.displayName} đang mở")
+            tb("${evt.displayName} đang mở/on")
         }
         else 	
         {
-            tb("${txt}: ${evt.displayName} đã tắt")
+            tb("${evt.displayName} đã tắt/off")
        }
    }
 }

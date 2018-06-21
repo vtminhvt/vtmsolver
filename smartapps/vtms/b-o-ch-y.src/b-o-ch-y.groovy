@@ -10,14 +10,17 @@ definition(
 //Test:OK
 preferences {
   section("Báo cháy"){
-   input "smokeH", "capability.smokeDetector", title: "Chọn thiết bị"
+   input "smokeH", "capability.smokeDetector", title: "Chọn cảm biến cháy"
   }
   
-section("Báo động Nhà"){
-   input("alamH","capability.alarm",title:"Báo động ở Nhà")
+section("Báo động"){
+   input("alamH","capability.alarm",title:"Chọn loa báo động")
    }
 }
-
+ section("Số điện thoại nhận tin nhắn")
+    	{
+        	input name:"txtmobi",type:"text", title:"Số điện thoại:+84SĐT",defaultValue:" "
+         }
 def init()
 {
 	subscribe(smokeH, "smoke", smoke_H)
@@ -39,13 +42,13 @@ def smoke_H(evt) {
   if("detected" == evt.value) 
   {
   	alamH.siren()
-  	sendPush("Phát hiện cháy tại Khu gia công. Hãy kiểm tra lại")
-    sendSms("+840948557126","Phát hiện cháy tại Khu gia công. Hãy kiểm tra lại")
+  	sendPush("Phát hiện cháy tại: ${evt.displayName}")
+    sendSms({$txtmobi},"Phát hiện cháy tại: ${evt.displayName}. Hãy kiểm tra lại")
   }
    if("tested" == evt.value) 
   {
   	alamH.siren()
-  	sendPush("[Đang sử dụng nút Test]: Phát hiện cháy tại Khu gia công. Hãy kiểm tra lại")
-    sendSms("+840948557126","Phát hiện cháy tại Khu gia công. Hãy kiểm tra lại")
+  	sendPush("[Đang sử dụng nút Test]: Phát hiện cháy tại: ${evt.displayName}")
+    sendSms({$txtmobi},"[Đang sử dụng nút Test]: Phát hiện cháy tại: ${evt.displayName}. Hãy kiểm tra lại")
   }
 }
