@@ -40,6 +40,6 @@ def tb(msg)
 
 def sw_CC(evt)
 {
- if(evt.value=="on") 	{thongbao( "${evt.displayName} đang hoạt động/chạy/mở")}
- else if(evt.value=="off") 	{thongbao("${evt.displayName} đã tắt/dừng")}
+ if(evt.value=="on") 	{thongbao( "${evt.displayName} đang mở/on")}
+ else if(evt.value=="off") 	{thongbao("${evt.displayName} đã tắt/off")}
 }
