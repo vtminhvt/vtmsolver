@@ -13,7 +13,7 @@ preferences {
      
     section("Công tắc điện")
     {
-    	input("swCC","capability.switch",title:"Máy phun sương")       
+    	input("swCC","capability.switch",title:"Máy phun sương",multiple:true, required:true)
     }  
 }
 def installed() 

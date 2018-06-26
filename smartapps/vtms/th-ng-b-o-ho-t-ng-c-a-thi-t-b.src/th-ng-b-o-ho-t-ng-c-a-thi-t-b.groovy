@@ -13,7 +13,7 @@ preferences {
      
     section("Thiết bị, công tắt")
     {
-    	input("swCC","capability.switch",title:"Chọn thiết bị, công tắt")       
+    	input("swCC","capability.switch",title:"Chọn thiết bị, công tắt", multiple:true, required:true)    
     }  
 }
 def installed() 
