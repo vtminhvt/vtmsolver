@@ -4,9 +4,9 @@ definition(
     author: "Vo Thanh Minh",
     description: "Kế hoạch công việc của từng cá nhân trong gia đình",
     category: "Safety & Security",
-    iconUrl: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png",
-    iconX2Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png",
-    iconX3Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png")
+   iconUrl: "https://i.imgur.com/f73vWMD.png",
+    iconX2Url: "https://i.imgur.com/f73vWMD.png",
+    iconX3Url: "https://i.imgur.com/f73vWMD.png")
 
 
 preferences {

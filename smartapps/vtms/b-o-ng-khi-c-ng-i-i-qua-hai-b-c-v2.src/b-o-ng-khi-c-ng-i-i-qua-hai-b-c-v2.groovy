@@ -4,9 +4,9 @@ definition(
     author: "Võ Thanh Minh",
     description: "Kịch bản điều khiển thiết bị dựa vào thói quen, sở thích và mệnh lệnh",
     category: "Safety & Security",
-    iconUrl: "https://s3.amazonaws.com/vtmsmartthings/vtms60.png",
-    iconX2Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png",
-    iconX3Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png")
+    iconUrl: "https://i.imgur.com/f73vWMD.png",
+    iconX2Url: "https://i.imgur.com/f73vWMD.png",
+    iconX3Url: "https://i.imgur.com/f73vWMD.png")
 //Test:OK 
 
 preferences 
@@ -137,18 +137,18 @@ def alam_H(evt)
 {
   if (evt.value == "strobe") 
   	{
-    	sendPush("[PTN]Báo động đang nhấp nháy đèn")
+    	sendPush("Báo động đang nhấp nháy đèn")
   	} 
   	if (evt.value == "siren") 
   	{
-    	sendPush( "[PTN]Báo động đang phát âm thanh")
+    	sendPush( "Báo động đang phát âm thanh")
   	}
   	if (evt.value == "both") 
   	{
-    	sendPush ("[PTN]Báo động đang phát đèn và âm thanh")
+    	sendPush ("Báo động đang phát đèn và âm thanh")
   	}
   	if (evt.value == "off") 
   	{
-    	sendPush("[PTN]Đã tắt báo động")
+    	sendPush("Đã tắt báo động")
   	}
 }

@@ -4,9 +4,9 @@ definition(
     author: "Võ Thanh Minh",
     description: "Đặt thời gian để hệ thống kiểm tra an ninh trước khi đi ngủ",
     category: "Safety & Security",
-    iconUrl: "https://s3.amazonaws.com/vtmsmartthings/vtms60.png",
-    iconX2Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png",
-    iconX3Url: "https://s3.amazonaws.com/vtmsmartthings/vtms120.png")
+   iconUrl: "https://i.imgur.com/f73vWMD.png",
+    iconX2Url: "https://i.imgur.com/f73vWMD.png",
+    iconX3Url: "https://i.imgur.com/f73vWMD.png")
 //test: OK
 
 preferences 
