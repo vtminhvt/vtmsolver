@@ -21,17 +21,17 @@ preferences
         }
     section ("Thời gian đèn sáng")
         {
-         input name: "timeofP", type: "number", title: "Đèn sáng trong bao lâu(phút)?", defaultValue:"1"
+         input name: "timeofP", type: "number", title: "Đèn sáng trong bao lâu(phút)?", defaultValue:"3"
         }
 
     section("Chọn công tắc")
         {
-            input("sw1","capability.switch",title:"Công tắc")
+            input("sw1","capability.switch",title:"Công tắc", multiple:true, required:true)
         }
     
     section("Cảm biến chuyển động")
     {
-        input("motionCD", "capability.motionSensor",title:"Chọn CB Chuyển động")
+        input("motionCD", "capability.motionSensor",title:"Chọn CB Chuyển động", multiple:true, required:true)
     }
     //
 }

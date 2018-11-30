@@ -42,13 +42,13 @@ def smoke_H(evt) {
   if("detected" == evt.value) 
   {
   	alamH.siren()
-  	sendPush("Phát hiện cháy tại: ${evt.displayName}")
-    sendSms({$txtmobi},"Phát hiện cháy tại: ${evt.displayName}. Hãy kiểm tra lại")
+  	sendPush("Phát hiện khói/cháy tại: ${evt.displayName}")
+    sendSms({$txtmobi},"Phát hiện khói/cháy tại: ${evt.displayName}. Hãy kiểm tra lại hoặc xem qua camera")
   }
    if("tested" == evt.value) 
   {
   	alamH.siren()
-  	sendPush("[Đang sử dụng nút Test]: Phát hiện cháy tại: ${evt.displayName}")
-    sendSms({$txtmobi},"[Đang sử dụng nút Test]: Phát hiện cháy tại: ${evt.displayName}. Hãy kiểm tra lại")
+  	sendPush("[Đang sử dụng nút Test]")
+  
   }
 }

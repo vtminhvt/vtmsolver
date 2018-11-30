@@ -19,7 +19,15 @@ preferences
     section("Cảm biến hiện diện")
     {
         input("presence","capability.presenceSensor",title:"Cảm biến hiện diện", multiple:true, required:true)
-    }  
+    }
+     section ("Nhập lời chào khi về nhà")
+    {
+    	input name:"txt1",type:"text", title:"Nhập nội dung",defaultValue:"Đã về nhà"
+    }
+    section ("Nhập lời chào khi rời khỏi nhà")
+    {
+    	input name:"txt2",type:"text", title:"Nhập nội dung",defaultValue:"Đã rời khỏi nhà, chúc an toàn"
+    }
 }
 def installed() 
 {
@@ -42,12 +50,12 @@ def presence_1(evt)
 	{
         if(evt.value=="present")
         {
-            sendPush("Chào bạn ${evt.displayName} đã về Nhà! ")
+            sendPush("${txt1}: ${evt.displayName} ")
         }
 
         if(evt.value=="not present")
         {
-            sendPush("Bạn ${evt.displayName} đã rời khỏi Nhà! An toàn nhé!")
+            sendPush("${txt2}: ${evt.displayName}")
         }
    } 
 }

@@ -22,7 +22,7 @@ preferences
     }
     section("Chọn công tắc điều khiển")
     {
-        input("sw1","capability.switch",title:"Công tắc")
+        input("sw1","capability.switch",title:"Công tắc", multiple:true, required:true)
     }
 }
 def installed() 
