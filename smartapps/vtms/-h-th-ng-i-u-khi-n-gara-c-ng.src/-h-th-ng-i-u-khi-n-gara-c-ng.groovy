@@ -14,12 +14,8 @@ preferences
     	input("swGR","capability.switch",title:"Nút bấm")             
     }
     
-    section("Nút thông báo")
-    {
-    	input("swNOI","capability.switch",title:"Nút thông báo")             
-    }
     
-    section("Nội dung thông báo")
+        section("Nội dung thông báo")
     	{
         	input name:"txt",type:"text", title:"Nhập nội dung",defaultValue:" "
          }
@@ -36,16 +32,14 @@ def updated()
 
 def init()
 {
-   subscribe(swNOI,"switch",sw_NOI)
-    subscribe(swGR,"switch",sw_GR)
+      subscribe(swGR,"switch",sw_GR)
 }
+
 def sw_GR(evt)
 {
-def val=swNOI.currentValue("switch")
 if (evt.value == "on")
-
 	{
-	 if  (val=="on") sendPush("${txt}")
-       swGR.off()
+	   swGR.off()
+       sendPush("${txt}")
 	}
 }
